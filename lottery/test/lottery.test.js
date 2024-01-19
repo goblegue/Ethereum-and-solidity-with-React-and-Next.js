@@ -80,7 +80,7 @@ describe("Lottery", () => {
       assert(err);
     }
   })
-  it('multiple players can enter ',async ()=>{
+  it('can pick a winner',async ()=>{
 
     await lottery.methods.enter().send({ 
       from : accounts[0],
@@ -97,12 +97,13 @@ describe("Lottery", () => {
     await lottery.methods.pickWinner().send({
       from : accounts[0],
     });
-    winners = 
 
-    assert.equal(accounts[0], players[0]);
-    assert.equal(accounts[1], players[1]);
-    assert.equal(accounts[2], players[2]);
-    assert.equal(3,players.length);
+    const finalbalance = await web3.eth.getBalance(lottery.options.address);
+    const players= await lottery.methods.allPlayers().call();
+
+    
+    assert.equal(0, finalbalance);;
+    assert.equal(0,players.length);
   });
 
 
