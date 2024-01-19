@@ -27,7 +27,7 @@ const deploy = async () => {
             gas: '1000000'
             
         });
-
+    console.log(interface);
     console.log('contract is deployed to the address', result.options.address);
     provider.engine.stop();
 }
