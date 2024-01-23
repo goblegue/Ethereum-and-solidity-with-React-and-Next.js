@@ -18,8 +18,7 @@ fs.ensureDirSync(Buildpath);
 
 for (let contract in output) {
   fs.outputJSONSync(
-    path.resolve(Buildpath, contract.replace(":","")+".json"),
+    path.resolve(Buildpath, contract.replace(":", "") + ".json"),
     output[contract]
   );
 }
-
