@@ -1,15 +1,19 @@
 import React from "react";
 import { Menu, Icon } from "semantic-ui-react";
-
+import { Link } from "../router";
 export default () => {
   return (
     <Menu style={{ marginTop: "15px" }}>
-      <Menu.Item> CrowdCoin </Menu.Item>
+      <Link route="/">
+        <a className="item"> CrowdCoin </a>
+      </Link>
       <Menu.Menu position="right">
-        <Menu.Item> Campaigns </Menu.Item>
-        <Menu.Item>
-          <Icon name="add" />
-        </Menu.Item>
+        <Link route="/">
+          <a className="item"> Campaigns </a>
+        </Link>
+        <Link route="/campaigns/new">
+          <a className="item">+</a>
+        </Link>
       </Menu.Menu>
     </Menu>
   );
