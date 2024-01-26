@@ -12,6 +12,8 @@ class ContributeForm extends Component {
   onSubmit = async (event) => {
     event.preventDefault();
     const campaign = Campaign(this.props.address);
+    /*    const in_ether = web3.utils.fromWei(this.state.contribution, "ether");
+    this.setState({ contribution: in_ether });*/
 
     this.setState({ loading: true, err_message: "" });
     try {
@@ -32,12 +34,14 @@ class ContributeForm extends Component {
         <FormField>
           <label>Contribute to this campaign!</label>
           <Input
-            label="wei"
+            label="ether"
             labelPosition="right"
             placeholder=""
-            value={this.state.minimum_contribution}
+            value={this.state.contribution}
             onChange={(event) => {
-              this.setState({ minimum_contribution: event.target.value });
+              this.setState({
+                contribution: event.target.value,
+              });
             }}
           />
         </FormField>
