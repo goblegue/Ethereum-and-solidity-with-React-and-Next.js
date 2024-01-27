@@ -34,7 +34,7 @@ class ContributeForm extends Component {
         <FormField>
           <label>Contribute to this campaign!</label>
           <Input
-            label="ether"
+            label="Ether"
             labelPosition="right"
             placeholder=""
             value={this.state.contribution}
